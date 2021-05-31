@@ -80,6 +80,40 @@
     </Timeline>
   </div>
 
+  <div class="bg-fullscreen p-d-flex p-flex-column p-ai-center">
+    <span class="text-section-title p-my-4">Awards</span>
+    <div class="p-grid p-my-5 p-px-4" style="width: 100%">
+      <div class="p-col-12 p-lg-6">
+        <Fieldset legend="Jenius Hackathon 2019 - National Top 7" data-aos="zoom-in" style="height: 100%">
+          February 2019
+          <br/><br/>
+          Developed a group banking product called CashTroops.
+          <br><br>
+          CashTroops is projected to be an extension feature of Jenius' already existing mobile app and offers multiple Jenius users' account to be united into one or more groups.
+          <br><br>
+          Group's abilities including shared account, set incoming events, ease of payments (QR), and transparency. CashTroops is developed with the goal to ease an organization or best friends management of money.
+        </Fieldset>
+      </div>
+      <div class="p-col-12 p-lg-6">
+        <Fieldset legend="IIT Idea Challenge - Best Proposal" data-aos="zoom-in" style="height: 100%">
+          December 2018
+          <br/><br/>
+          Proposed an event lounge application called Eventure.
+          <br><br>
+          Eventure is developed with the goal to ease transactions between Event Organizers (EOs) and customers, providing promotion services to EOs, and providing event lounge for customers.
+        </Fieldset>
+      </div>
+      <div class="p-col-12 p-lg-6">
+        <Fieldset legend="Telestra IoT Cloud Computing Competition - 1st Place" data-aos="zoom-in" style="height: 100%">
+          November 2018
+          <br/><br/>
+          Developed an IoT heartbeat detector called HerB.
+          <br><br>
+          HerB is developed with the goal to improve people's awareness of their heart condition and start to live their life healthier. HerB is created using NodeMCU as the detector, Android as the mobile application, and Firebase as the real time database.
+        </Fieldset>
+      </div>
+    </div>
+  </div>
 
 </template>
 
@@ -118,9 +152,9 @@ export default {
           role: "Software Quality Improvement Intern", 
           date:"Mar 2021 - Now",
           description:`Helping delivery and operations:
-          1. Building code with Jenkins,
-          2. Developing pipeline scripts,
-          3. Delivering code to UAT stage.
+- Building code with Jenkins,
+- Developing pipeline scripts,
+- Delivering code to UAT stage.
           `
         }
       ]
