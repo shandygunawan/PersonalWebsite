@@ -14,8 +14,8 @@
   <div class="bg-fullscreen p-d-flex p-flex-column p-ai-center">
     <span class="text-section-title p-my-4">Profile</span>
     <div class="p-grid p-mt-5 p-px-4" style="width: 100%">
-      <div class="p-col p-lg-4 p-text-center">
-        <Card data-aos="fade-up" style="height: 100%">
+      <div class="p-col-12 p-lg-4 p-text-center">
+        <Card style="height: 100%" data-aos="fade-up">
           <template #title>
             <span class="text-section-subtitle">About Me</span>
           </template>
@@ -24,11 +24,11 @@
           </template>
         </Card>
       </div>
-      <div class="p-col p-lg-4 p-text-center">
-        <img :src="avatar_image" :alt="avatar_alt" class="img-avatar" data-aos="flip-left">
+      <div class="p-col-12 p-lg-4 p-text-center">
+        <img :src="avatar_image" :alt="avatar_alt" class="img-avatar">
       </div>
-      <div class="p-col p-lg-4 p-text-center">
-        <Card data-aos="fade-up" style="height: 100%">
+      <div class="p-col-12 p-lg-4 p-mb-4 p-text-center">
+        <Card style="height: 100%" data-aos="fade-up">
           <template #title>
             <span class="text-section-subtitle">Details</span>
           </template>
@@ -49,9 +49,38 @@
       </div>
     </div>
   </div>
+
+  <!-- Experiences -->
   <div class="bg-fullscreen bg-color-tan p-d-flex p-flex-column p-ai-center">
     <span class="text-section-title p-my-4">Experiences</span>
+
+    <Timeline :value="experiences" align="alternate" class="p-mt-4" data-aos="fade-down">
+      <template #opposite="slotProps">
+        {{slotProps.item.date}}
+      </template>
+      <template #content="slotProps">
+        <Card class="p-mb-5" data-aos="flip-up">
+          <template #title>
+            <div class="p-text-left">
+              {{slotProps.item.company}}
+            </div>
+          </template>
+          <template #subtitle>
+            <div class="p-text-left">
+              {{slotProps.item.role}}
+            </div>
+          </template>
+          <template #content>
+            <div class="text-card-content p-text-left">
+              {{slotProps.item.description}}
+            </div>
+          </template>
+        </Card>
+      </template>
+    </Timeline>
   </div>
+
+
 </template>
 
 <script>
@@ -61,7 +90,40 @@ export default {
   data() {
     return {
       avatar_image: image_avatar,
-      avatar_alt: "Shandy"
+      avatar_alt: "Shandy",
+      experiences: [
+        {
+          company: "Qontak", 
+          role: "Android Developer Intern", 
+          date:"May 2019 - Aug 2019",
+          description: `Working on company's mobile application using Kotlin: 
+- Create and update existing User Interfaces (XML and dynamic UIs),
+- Add filters for contacts list and products list,
+- Implement voice recording and playback capability when adding and editing notes,
+- Integrate CRM with Qiscus Multichannel (Server-side, non-Mobile).
+`
+        },
+        {
+          company: "Learncy", 
+          role: "Part Time Full Stack Developer", 
+          date:"Dec 2019 - Jan 2020" ,
+          description:`Working on company's various features:
+- Creating history for CyCash transactions,
+- Integrating CyCash top up with Midtrans Payment Gateway,
+- Creating "Rasionalisasi" feature (Full Stack).
+          `
+        },
+        {
+          company: "BCA", 
+          role: "Software Quality Improvement Intern", 
+          date:"Mar 2021 - Now",
+          description:`Helping delivery and operations:
+          1. Building code with Jenkins,
+          2. Developing pipeline scripts,
+          3. Delivering code to UAT stage.
+          `
+        }
+      ]
     };
   }
 }
@@ -70,7 +132,7 @@ export default {
 <style scoped>
 /* BG */
 .bg-fullscreen {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* COlOR */
@@ -110,11 +172,57 @@ export default {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.text-card-content {
+  white-space: pre-wrap;
+}
+
 /* IMAGE */
 .img-avatar {
   width: 300px;
   height: 300px;
   border-radius: 50%;
+  transition: transform 1s;
+}
+
+.img-avatar:hover {
+  transform: scale(1.2);
+}
+
+/* OTHER */
+.border-black {
+  border: 1px solid black;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
+  /* BG */
+  .bg-fullscreen {
+    height: 100%;
+  }
+
+  /* TEXT */
+  .text-section-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+    color:var(--blue-400);
+  }
+
+  .text-card-content {
+    white-space: pre-wrap;
+  }
+
+    /* IMAGE */
+  .img-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+
+  .img-avatar:hover {
+    transform: scale(1.1);
+  }
 }
 
 </style>

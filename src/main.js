@@ -7,6 +7,7 @@ import PrimeVue from 'primevue/config';
 import Button from 'primevue/button';
 import Avatar from 'primevue/avatar';
 import Card from 'primevue/card';
+import Timeline from 'primevue/timeline';
 import 'primeflex/primeflex.css';
 import 'primevue/resources/themes/nova/theme.css';
 
@@ -26,5 +27,6 @@ app.use(PrimeVue, {ripple: true});
 app.component("Button", Button);
 app.component("Avatar", Avatar);
 app.component("Card", Card);
+app.component("Timeline", Timeline);
 
 app.mount('#app');
