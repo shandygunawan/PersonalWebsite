@@ -1,7 +1,7 @@
 <template>
   <div class="background">
     <div class="dark-layer">
-      <div class="p-d-flex p-flex-column p-jc-center p-ai-center" style="height: 100vh;">
+      <div class="p-d-flex p-flex-column p-jc-center p-ai-center" style="height: 100vh; overflow:hidden;*">
         <img :src="avatar_image" :alt="avatar_alt" class="img-avatar">
         <div class="p-grid p-mt-1">
           <div class="p-col-12 p-text-center">
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import image_avatar from '../assets/images/index_avatar.jpg';
+import image_avatar from '../assets/images/avatar.jpg';
 
 export default {
   data() {

@@ -11,7 +11,14 @@ export default {
 </script>
 
 <style>
-body {
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
   margin: 0px;
 }
 </style>
