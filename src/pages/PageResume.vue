@@ -124,6 +124,7 @@
       :numVisible="1" 
       :numScroll="1"
       data-aos="flip-left"
+      style="overflow: hidden;"
       >
       <template #item="slotProps">
         <Card>
@@ -144,6 +145,9 @@
     </Carousel>
   </div>
 
+  <div class="bg-fullscreen p-d-flex p-flex-column p-ai-center">
+    <span class="text-section-title p-my-5">Contacts</span>
+  </div>
 </template>
 
 <script>
@@ -380,7 +384,7 @@ HerB is developed with the goal to improve people's awareness of their heart con
 }
 
 /* WEB */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 601px) {
   .carousel-sizing {
     width: 70%;
   }
@@ -415,6 +419,11 @@ HerB is developed with the goal to improve people's awareness of their heart con
 
   .img-avatar:hover {
     transform: scale(1.1);
+  }
+
+  /* OTHER */
+  .carousel-sizing {
+    width: 100%;
   }
 }
 
