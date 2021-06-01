@@ -5,10 +5,9 @@
         class="p-col-6 p-lg-3 p-text-center" 
         v-for="skill in skills"
         :key="skill.name">
-        <figure>
-          <img :src="skill.image" :alt="skill.name" class="img-logo">
-          <figcaption class="text-section-subtitle p-mt-1">{{ skill.name }}</figcaption>
-        </figure>
+        <img :src="skill.image" :alt="skill.name" class="img-logo">
+        <br/>
+        <span class="text-section-subtitle p-text-center p-mt-1">{{ skill.name }}</span>
       </div>
     </div>
   </Fieldset>
@@ -29,6 +28,14 @@ export default {
 .img-logo {
   width: 100px;
   width: 100px;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 600px) {
+  .img-logo {
+    width: 75px;
+    width: 75px;
+  }
 }
 
 </style>
