@@ -2,7 +2,7 @@
   <div class="background">
     <div class="p-d-flex p-flex-column p-p-5">
       <h1>Projects</h1>
-      <span>Type categories then press Enter to filter</span>
+      <span>Type any category then press Enter to filter</span>
       <Chips v-model="chips" @add="updateProjectsList" @remove="updateProjectsList" />
       <br/>
       <div class="p-grid">
