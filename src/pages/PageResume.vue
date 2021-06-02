@@ -8,7 +8,8 @@
     <span class="text-landing-name">Shandy</span>
     <span class="text-landing-resume">--------------</span>
     <span class="text-landing-resume">Resume</span>
-
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <font-awesome-icon :icon="['fas', 'arrow-down']" size="3x" class="text-landing-arrow bounce-4" />
   </div>
 
   <!-- Profile -->
@@ -325,8 +326,7 @@ HerB is developed with the goal to improve people's awareness of their heart con
   min-height: 100vh;
 }
 
-/* COlOR */
-
+/* COLOR */
 .bg-color-light-green {
   background-color: #C9FFB1;
 }
@@ -337,6 +337,19 @@ HerB is developed with the goal to improve people's awareness of their heart con
 
 .bg-color-tan {
   background-color: #F3EFE0;
+}
+
+/* ANIMATION */
+.bounce-4 {
+    animation-name: bounce-4;
+    animation-timing-function: ease;
+}
+@keyframes bounce-4 {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-100px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
 }
 
 /* TEXT */
@@ -351,6 +364,12 @@ HerB is developed with the goal to improve people's awareness of their heart con
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 200;
   font-size: 3rem;
+  color:var(--blue-100);
+}
+
+.text-landing-arrow {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
   color:var(--blue-100);
 }
 

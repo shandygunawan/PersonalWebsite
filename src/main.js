@@ -34,7 +34,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { 
 	faEnvelope,
 	faFilePdf,
-	faLink
+	faLink,
+	faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 import { 
 	faGithub,
@@ -62,7 +63,7 @@ app.component("Carousel", Carousel);
 app.component("Chips", Chips);
 
 // FontAwesome
-library.add(faGithub, faLinkedin, faEnvelope, faFilePdf, faLink);
+library.add(faGithub, faLinkedin, faEnvelope, faFilePdf, faLink, faArrowDown);
 app.component('font-awesome-icon', FontAwesomeIcon);
 
 // AOS
