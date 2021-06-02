@@ -32,12 +32,13 @@
 import image_avatar from '../assets/images/avatar.jpg';
 
 export default {
+  title: "Shandy's Website",
   data() {
     return {
       avatar_image: image_avatar,
       avatar_alt: "Shandy"
     };
-  }
+  },
 }
 </script>
 

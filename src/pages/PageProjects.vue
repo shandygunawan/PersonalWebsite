@@ -45,6 +45,7 @@
 
 <script>
 export default {
+  title: "Projects",
   data() {
     return {
       chips: ["web", "other"],

@@ -179,6 +179,7 @@ import image_avatar from '../assets/images/avatar.jpg';
 import SkillPanel from '../components/SkillPanel.vue';
 
 export default {
+  title: "Resume",
   components: {
     SkillPanel
   },

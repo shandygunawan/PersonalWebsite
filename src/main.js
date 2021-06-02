@@ -7,6 +7,9 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router.js';
 
+// Mixin
+import titleMixin from './mixins/titleMixin.js';
+
 // PrimeVue
 import PrimeVue from 'primevue/config';
 import Button from 'primevue/button';
@@ -45,6 +48,7 @@ import {
 // Vue
 const app = createApp(App);
 app.use(router);
+app.mixin(titleMixin);
 
 // PrimeVue
 app.use(PrimeVue, {ripple: true});
