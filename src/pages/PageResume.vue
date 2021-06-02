@@ -145,8 +145,32 @@
     </Carousel>
   </div>
 
-  <div class="bg-fullscreen p-d-flex p-flex-column p-ai-center">
-    <span class="text-section-title p-my-5">Contacts</span>
+  <!-- Contact -->
+  <div class="bg-fullscreen p-d-flex p-flex-column p-jc-center p-ai-center">
+    <span class="text-section-title p-my-5">Contact</span>
+    <div class="p-grid" style="width: 50%">
+      <div class="p-col-12 p-md-4 p-text-center">
+        <a href="https://github.com/shandygunawan">
+          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out">
+            <font-awesome-icon :icon="['fab', 'github']" size="4x" />
+          </Button>
+        </a>
+      </div>
+      <div class="p-col-12 p-md-4 p-text-center">
+        <a href="mailto:shandy.gunawan@rocketmail.com">
+          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out">
+            <font-awesome-icon :icon="['fas', 'envelope']" size="4x" />
+          </Button>
+        </a>
+      </div>
+      <div class="p-col-12 p-md-4 p-text-center">
+        <a href="https://www.linkedin.com/in/shandy-gunawan/">
+          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out">
+            <font-awesome-icon :icon="['fab', 'linkedin']" size="4x" />
+          </Button>
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -287,25 +311,7 @@ HerB is developed with the goal to improve people's awareness of their heart con
           "name": "MongoDB",
           "image": require("../assets/images/logo_mongodb.svg")
         }
-      ],
-      galleriaResponsiveOptions: [
-				{
-          breakpoint: '1024px',
-          numVisible: 5
-        },
-        {
-          breakpoint: '960px',
-          numVisible: 4
-        },
-        {
-          breakpoint: '768px',
-          numVisible: 3
-        },
-        {
-          breakpoint: '560px',
-          numVisible: 1
-        }
-			]
+      ]
     };
   }
 }
