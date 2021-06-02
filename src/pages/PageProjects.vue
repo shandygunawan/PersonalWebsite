@@ -56,11 +56,11 @@ export default {
       projects_all: [
         {
           "name": "Personal Website",
-          "category": "web",
+          "category": "Web",
           "description": `
           My Personal website is created as a place to share my CV, my projects, and my thoughts through blog.
-          Created as a Single-Page Application that allow for seamless client-side experience.`,
-          
+          Created as a Single-Page Application that allow for seamless client-side experience.
+          `,
           "languages": "JavaScript",
           "tools": "VueJS, PrimeVue, Firebase",
           "url_github": "https://github.com/shandygunawan/PersonalWebsite",
@@ -68,12 +68,12 @@ export default {
         },
         {
           "name": "Interactive IR",
-          "category": "other",
+          "category": "Other",
           "description": `
           Interactive IR simulates how an Information Retrieval (IR) system works. 
           In this app, user can choose configurations on how the IR system works along with the result type (experimental or interactive). 
-          Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).`,
-          
+          Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).
+          `,
           "languages": "JavaScript, Python",
           "tools": "ReactJS, Bootstrap, Flask",
           "url_github": "https://github.com/shandygunawan/InteractiveIR",
@@ -81,11 +81,11 @@ export default {
         },
         {
           "name": "InventoryStore",
-          "category": "web",
+          "category": "Web",
           "description": `
           InventoryStore is a web app to manage a store's inventory and cashflow. 
-          It features low stock alert, IGOG charts, stock price history, etc.`,
-          
+          It features low stock alert, IGOG charts, stock price history, etc.
+          `,
           "languages": "Python",
           "tools": "Bootstrap, Django",
           "url_github": "https://github.com/shandygunawan/InventoryStore",
@@ -93,12 +93,12 @@ export default {
         },
         {
           "name": "Enhanced Hot Event Detection",
-          "category": "algorithm",
+          "category": "Algorithm",
           "description": `
           My undergraduate thesis. 
           Enhanced Hot Event Detection improves the original by adding additional steps to improve the accuracy and effectiveness.
-          Added steps: TF-IDF, Semantic Similarity, NER Model, and Event Merging.`,
-          
+          Added steps: TF-IDF, Semantic Similarity, NER Model, and Event Merging.
+          `,
           "languages": "Python",
           "tools": "Pandas, spaCy, YAKE, scikit-learn, NLTK",
           "url_github": "https://github.com/shandygunawan/EnhancedHotEventDetection",
@@ -106,12 +106,12 @@ export default {
         },
         {
           "name": "Cashtroops",
-          "category": "android",
+          "category": "Android",
           "description": `
           CashTroops is projected to be an extension feature of Jenius' already existing mobile app and offers multiple Jenius users' account to be united into one or more groups. 
           Group's abilities including shared account, set incoming events, ease of payments (QR), and transparency. 
-          CashTroops is developed with the goal to ease an organization or best friends management of money.`,
-          
+          CashTroops is developed with the goal to ease an organization or best friends management of money.
+          `,
           "languages": "Java",
           "tools": "Firebase, Glide",
           "url_github": "https://github.com/shandygunawan/Cashtroops",
@@ -119,7 +119,7 @@ export default {
         },
         {
           "name": "Jabar-Plan-Milestone-2",
-          "category": "web",
+          "category": "Web",
           "description": `
           Jabar-Plan-Milestone-2 is the codename for my team's official project with the West Java government.
           The project is a website providing users the ability to add, edit, and track procurement process of all West Java government's programs.
