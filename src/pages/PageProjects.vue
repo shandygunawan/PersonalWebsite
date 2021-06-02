@@ -2,6 +2,7 @@
   <div class="background">
     <div class="p-d-flex p-flex-column p-p-5">
       <h1>Projects</h1>
+      <span>Type categories then press Enter to filter</span>
       <Chips v-model="chips" @add="updateProjectsList" @remove="updateProjectsList" />
       <br/>
       <div class="p-grid">
@@ -50,34 +51,16 @@ export default {
   title: "Projects",
   data() {
     return {
-      chips: ["web", "other"],
+      chips: [],
       projects_filtered: [],
       projects_all: [
         {
-          "name": "Interactive IR",
-          "category": "other",
-          "description": "Interactive IR simulates how an Information Retrieval (IR) system works. In this app, user can choose configurations on how the IR system works along with the result type (experimental or interactive). Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).",
-          "summary": "IR simulation with user's custom configuration.",
-          "languages": "JavaScript, Python",
-          "tools": "ReactJS, Bootstrap, Flask",
-          "url_github": "https://github.com/shandygunawan/InteractiveIR",
-          "url_external": "https://interactive-ir.herokuapp.com/"
-        },
-        {
-          "name": "Interactive IR",
-          "category": "other",
-          "description": "Interactive IR simulates how an Information Retrieval (IR) system works. In this app, user can choose configurations on how the IR system works along with the result type (experimental or interactive). Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).",
-          "summary": "IR simulation with user's custom configuration.",
-          "languages": "JavaScript, Python",
-          "tools": "ReactJS, Bootstrap, Flask",
-          "url_github": "https://github.com/shandygunawan/InteractiveIR",
-          "url_external": "https://interactive-ir.herokuapp.com/"
-        },
-        {
           "name": "Personal Website",
           "category": "web",
-          "description": "My Personal website is created as a place to share my CV, my projects, and my thoughts through blog.",
-          "summary": "My Personal Website.",
+          "description": `
+          My Personal website is created as a place to share my CV, my projects, and my thoughts through blog.
+          Created as a Single-Page Application that allow for seamless client-side experience.`,
+          
           "languages": "JavaScript",
           "tools": "VueJS, PrimeVue, Firebase",
           "url_github": "https://github.com/shandygunawan/PersonalWebsite",
@@ -86,21 +69,79 @@ export default {
         {
           "name": "Interactive IR",
           "category": "other",
-          "description": "Interactive IR simulates how an Information Retrieval (IR) system works. In this app, user can choose configurations on how the IR system works along with the result type (experimental or interactive). Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).",
-          "summary": "IR simulation with user's custom configuration.",
+          "description": `
+          Interactive IR simulates how an Information Retrieval (IR) system works. 
+          In this app, user can choose configurations on how the IR system works along with the result type (experimental or interactive). 
+          Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).`,
+          
           "languages": "JavaScript, Python",
           "tools": "ReactJS, Bootstrap, Flask",
           "url_github": "https://github.com/shandygunawan/InteractiveIR",
           "url_external": "https://interactive-ir.herokuapp.com/"
+        },
+        {
+          "name": "InventoryStore",
+          "category": "web",
+          "description": `
+          InventoryStore is a web app to manage a store's inventory and cashflow. 
+          It features low stock alert, IGOG charts, stock price history, etc.`,
+          
+          "languages": "Python",
+          "tools": "Bootstrap, Django",
+          "url_github": "https://github.com/shandygunawan/InventoryStore",
+          "url_external": ""
+        },
+        {
+          "name": "Enhanced Hot Event Detection",
+          "category": "algorithm",
+          "description": `
+          My undergraduate thesis. 
+          Enhanced Hot Event Detection improves the original by adding additional steps to improve the accuracy and effectiveness.
+          Added steps: TF-IDF, Semantic Similarity, NER Model, and Event Merging.`,
+          
+          "languages": "Python",
+          "tools": "Pandas, spaCy, YAKE, scikit-learn, NLTK",
+          "url_github": "https://github.com/shandygunawan/EnhancedHotEventDetection",
+          "url_external": ""
+        },
+        {
+          "name": "Cashtroops",
+          "category": "android",
+          "description": `
+          CashTroops is projected to be an extension feature of Jenius' already existing mobile app and offers multiple Jenius users' account to be united into one or more groups. 
+          Group's abilities including shared account, set incoming events, ease of payments (QR), and transparency. 
+          CashTroops is developed with the goal to ease an organization or best friends management of money.`,
+          
+          "languages": "Java",
+          "tools": "Firebase, Glide",
+          "url_github": "https://github.com/shandygunawan/Cashtroops",
+          "url_external": ""
+        },
+        {
+          "name": "Jabar-Plan-Milestone-2",
+          "category": "web",
+          "description": `
+          Jabar-Plan-Milestone-2 is the codename for my team's official project with the West Java government.
+          The project is a website providing users the ability to add, edit, and track procurement process of all West Java government's programs.
+          My contributions in this group project are: Create database's model, Retrieve and parse all data from sources to database, Create APIs for Front End to access database (details, statistics, etc).
+          `,
+          "languages": "JavaScript",
+          "tools": "AdonisJS, MySQL",
+          "url_github": "",
+          "url_external": ""
         },
       ]
     }
   },
   methods: {
     updateProjectsList(){
-      this.projects_filtered = this.projects_all.filter((el) => {
-        return this.chips.includes(el.category);
-      });
+      if (this.chips.length === 0) {
+        this.projects_filtered = this.projects_all;
+      } else {
+        this.projects_filtered = this.projects_all.filter((el) => {
+          return this.chips.includes(el.category);
+        });
+      }
     }
   },
   mounted(){
