@@ -15,7 +15,9 @@
             </router-link>
           </div>
           <div class="p-col-12 p-lg-4 p-my-2 p-text-center">
-            <Button class="p-button-link p-button-secondary p-button-outlined p-button-lg" label="Projects"></Button>
+            <router-link to="/projects">
+              <Button class="p-button-link p-button-secondary p-button-outlined p-button-lg" label="Projects"></Button>
+            </router-link>
           </div>
           <div class="p-col-12 p-lg-4 p-my-2 p-text-center">
             <Button class="p-button-link p-button-secondary p-button-outlined p-button-lg" label="Blogs"></Button>
@@ -41,7 +43,7 @@ export default {
 
 <style scoped>
 .background {
-  background-image: url('../assets/images/index_wallpaper.jpg');
+  background-image: url('../assets/images/wallpaper.jpg');
   background-size: cover;
 }
 

@@ -16,7 +16,9 @@ import Timeline from 'primevue/timeline';
 import Fieldset from 'primevue/fieldset';
 import ProgressBar from 'primevue/progressbar';
 import Carousel from 'primevue/carousel';
+import Chips from 'primevue/chips';
 import 'primeflex/primeflex.css';
+import "primeicons/primeicons.css"
 import 'primevue/resources/themes/nova/theme.css';
 
 // AOS
@@ -28,7 +30,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { 
 	faEnvelope,
-	faFilePdf
+	faFilePdf,
+	faLink
 } from "@fortawesome/free-solid-svg-icons";
 import { 
 	faGithub,
@@ -52,9 +55,10 @@ app.component("Timeline", Timeline);
 app.component("Fieldset", Fieldset);
 app.component("ProgressBar", ProgressBar);
 app.component("Carousel", Carousel);
+app.component("Chips", Chips);
 
 // FontAwesome
-library.add(faGithub, faLinkedin, faEnvelope, faFilePdf);
+library.add(faGithub, faLinkedin, faEnvelope, faFilePdf, faLink);
 app.component('font-awesome-icon', FontAwesomeIcon);
 
 // AOS

@@ -151,21 +151,21 @@
     <div class="p-grid" style="width: 50%">
       <div class="p-col-12 p-md-4 p-text-center">
         <a href="https://github.com/shandygunawan">
-          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out">
+          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out-down">
             <font-awesome-icon :icon="['fab', 'github']" size="4x" />
           </Button>
         </a>
       </div>
       <div class="p-col-12 p-md-4 p-text-center">
         <a href="mailto:shandy.gunawan@rocketmail.com">
-          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out">
+          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out-down">
             <font-awesome-icon :icon="['fas', 'envelope']" size="4x" />
           </Button>
         </a>
       </div>
       <div class="p-col-12 p-md-4 p-text-center">
         <a href="https://www.linkedin.com/in/shandy-gunawan/">
-          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out">
+          <Button class="p-button-lg p-button-raised p-button-rounded" data-aos="zoom-out-down">
             <font-awesome-icon :icon="['fab', 'linkedin']" size="4x" />
           </Button>
         </a>
