@@ -120,30 +120,24 @@
   <!-- Awards -->
   <div class="bg-fullscreen bg-color-light-yellow p-d-flex p-flex-column p-ai-center">
     <span class="text-section-title p-my-5">Awards</span>
-    <Carousel 
-      class="carousel-sizing"
-      :value="awards" 
-      :numVisible="1" 
-      :numScroll="1"
-      data-aos="flip-left"
-      >
-      <template #item="slotProps">
+    <div class="p-grid p-p-5" style="width: 100%">
+      <div class="p-col-12 p-lg-6" v-for="award in awards" :key="award.title" data-aos="flip-left">
         <Card>
           <template #header>
-            <img :src="slotProps.data.image" style="wid: 15rem;">
+            <img :src="award.image">
           </template>
           <template #title>
-            {{slotProps.data.title}}
+            {{award.title}}
           </template>
           <template #subtitle>
-            {{slotProps.data.date}}
+            {{award.date}}
           </template>
           <template #content>
-            {{slotProps.data.description}}
+            {{award.description}}
           </template>
         </Card>
-      </template>
-    </Carousel>
+      </div>
+    </div>
   </div>
 
   <!-- Contact -->
@@ -410,13 +404,6 @@ HerB is developed with the goal to improve people's awareness of their heart con
   border: 1px solid black;
 }
 
-/* WEB */
-@media only screen and (min-width: 601px) {
-  .carousel-sizing {
-    width: 70%;
-  }
-}
-
 /* MOBILE */
 @media only screen and (max-width: 600px) {
   /* BG */
@@ -446,11 +433,6 @@ HerB is developed with the goal to improve people's awareness of their heart con
 
   .img-avatar:hover {
     transform: scale(1.1);
-  }
-
-  /* OTHER */
-  .carousel-sizing {
-    width: 100%;
   }
 }
 
