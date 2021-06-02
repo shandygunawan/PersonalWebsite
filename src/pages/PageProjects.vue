@@ -5,8 +5,9 @@
       <Chips v-model="chips" @add="updateProjectsList" @remove="updateProjectsList" />
       <br/>
       <div class="p-grid">
+        <transition-group name="project-list">
         <div class="p-col-12 p-md-6 p-lg-4" v-for="project in projects_filtered" :key="project.name">
-          <Card >
+          <Card>
             <template #title>
               {{project.name}}
             </template>
@@ -38,6 +39,7 @@
             </template>
           </Card>
         </div>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -51,6 +53,26 @@ export default {
       chips: ["web", "other"],
       projects_filtered: [],
       projects_all: [
+        {
+          "name": "Interactive IR",
+          "category": "other",
+          "description": "Interactive IR simulates how an Information Retrieval (IR) system works. In this app, user can choose configurations on how the IR system works along with the result type (experimental or interactive). Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).",
+          "summary": "IR simulation with user's custom configuration.",
+          "languages": "JavaScript, Python",
+          "tools": "ReactJS, Bootstrap, Flask",
+          "url_github": "https://github.com/shandygunawan/InteractiveIR",
+          "url_external": "https://interactive-ir.herokuapp.com/"
+        },
+        {
+          "name": "Interactive IR",
+          "category": "other",
+          "description": "Interactive IR simulates how an Information Retrieval (IR) system works. In this app, user can choose configurations on how the IR system works along with the result type (experimental or interactive). Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).",
+          "summary": "IR simulation with user's custom configuration.",
+          "languages": "JavaScript, Python",
+          "tools": "ReactJS, Bootstrap, Flask",
+          "url_github": "https://github.com/shandygunawan/InteractiveIR",
+          "url_external": "https://interactive-ir.herokuapp.com/"
+        },
         {
           "name": "Personal Website",
           "category": "web",
@@ -95,6 +117,35 @@ export default {
 
 .border-black {
   border: 1px solid black;
+}
+
+.project-list-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.project-list-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.project-list-enter-to,
+.project-list-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project-list-leave-active {
+  transition: all 0.5s ease-in;
+  position: absolute;
+}
+
+.project-list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.project-list-move {
+  transition: transform 0.8s ease;
 }
 
 </style>
