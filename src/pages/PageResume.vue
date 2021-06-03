@@ -428,7 +428,7 @@ HerB is developed with the goal to improve people's awareness of their heart con
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    transition: transform 0.2s;
+    transition: transform 0.5s;
   }
 
   .img-avatar:hover {

@@ -62,17 +62,9 @@ export default {
 }
 
 .img-avatar {
-  width: 200px;
-  height: 200px;
+  width: clamp(150px, 200px, 200px);
+  height: clamp(150px, 200px, 200px);
   border-radius: 50%;
-}
-
-@media only screen and (max-width: 600px) {
-  .img-avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }  
 }
 
 </style>
