@@ -31,12 +31,16 @@
               </div>
             </template>
             <template #footer>
-              <Button class="p-button-secondary" v-if="project.url_github !== ''">
-                <font-awesome-icon :icon="['fab', 'github']" size="lg" />
-              </Button>
-              <Button class="p-button-info p-ml-3" v-if="project.url_external !== ''">
-                <font-awesome-icon :icon="['fas', 'link']" size="lg" />
-              </Button>
+              <a :href="project.url_github">
+                <Button class="p-button-secondary" v-if="project.url_github !== ''">
+                  <font-awesome-icon :icon="['fab', 'github']" size="lg" />
+                </Button>
+              </a>
+              <a :href="project.url_external">
+                <Button class="p-button-info p-ml-3" v-if="project.url_external !== ''">
+                  <font-awesome-icon :icon="['fas', 'link']" size="lg" />
+                </Button>
+              </a>
             </template>
           </Card>
         </div>
@@ -64,7 +68,7 @@ export default {
           "languages": "JavaScript",
           "tools": "VueJS, PrimeVue, Firebase",
           "url_github": "https://github.com/shandygunawan/PersonalWebsite",
-          "url_external": "shandywebsite.web.app"
+          "url_external": "https://shandywebsite.web.app"
         },
         {
           "name": "Interactive IR",
