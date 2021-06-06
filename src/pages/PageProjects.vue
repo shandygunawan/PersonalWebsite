@@ -51,94 +51,20 @@
 </template>
 
 <script>
+import firebase from "../firebaseInit.js";
+const db = firebase.firestore();
+
 export default {
   title: "Projects",
   data() {
     return {
       chips: [],
       projects_filtered: [],
-      projects_all: [
-        {
-          "name": "Personal Website",
-          "category": "Web",
-          "description": `
-          My Personal website is created as a place to share my CV, my projects, and my thoughts through blog.
-          Created as a Single-Page Application that allow for seamless client-side experience.
-          `,
-          "languages": "JavaScript",
-          "tools": "VueJS, PrimeVue, Firebase",
-          "url_github": "https://github.com/shandygunawan/PersonalWebsite",
-          "url_external": "https://shandywebsite.web.app"
-        },
-        {
-          "name": "Interactive IR",
-          "category": "Other",
-          "description": `
-          Interactive IR simulates how an Information Retrieval (IR) system works. 
-          In this app, user can choose configurations on how the IR system works along with the result type (experimental or interactive). 
-          Experimental gives a query-by-query performances while interactive gives relevance documents (like a search engine).
-          `,
-          "languages": "JavaScript, Python",
-          "tools": "ReactJS, Bootstrap, Flask",
-          "url_github": "https://github.com/shandygunawan/InteractiveIR",
-          "url_external": "https://interactive-ir.herokuapp.com/"
-        },
-        {
-          "name": "InventoryStore",
-          "category": "Web",
-          "description": `
-          InventoryStore is a web app to manage a store's inventory and cashflow. 
-          It features low stock alert, IGOG charts, stock price history, etc.
-          `,
-          "languages": "Python",
-          "tools": "Bootstrap, Django",
-          "url_github": "https://github.com/shandygunawan/InventoryStore",
-          "url_external": ""
-        },
-        {
-          "name": "Enhanced Hot Event Detection",
-          "category": "Algorithm",
-          "description": `
-          My undergraduate thesis. 
-          Enhanced Hot Event Detection improves the original by adding additional steps to improve the accuracy and effectiveness.
-          Added steps: TF-IDF, Semantic Similarity, NER Model, and Event Merging.
-          `,
-          "languages": "Python",
-          "tools": "Pandas, spaCy, YAKE, scikit-learn, NLTK",
-          "url_github": "https://github.com/shandygunawan/EnhancedHotEventDetection",
-          "url_external": ""
-        },
-        {
-          "name": "Cashtroops",
-          "category": "Android",
-          "description": `
-          CashTroops is projected to be an extension feature of Jenius' already existing mobile app and offers multiple Jenius users' account to be united into one or more groups. 
-          Group's abilities including shared account, set incoming events, ease of payments (QR), and transparency. 
-          CashTroops is developed with the goal to ease an organization or best friends management of money.
-          `,
-          "languages": "Java",
-          "tools": "Firebase, Glide",
-          "url_github": "https://github.com/shandygunawan/Cashtroops",
-          "url_external": ""
-        },
-        {
-          "name": "Jabar-Plan-Milestone-2",
-          "category": "Web",
-          "description": `
-          Jabar-Plan-Milestone-2 is the codename for my team's official project with the West Java government.
-          The project is a website providing users the ability to add, edit, and track procurement process of all West Java government's programs.
-          My contributions in this group project are: Create database's model, Retrieve and parse all data from sources to database, Create APIs for Front End to access database (details, statistics, etc).
-          `,
-          "languages": "JavaScript",
-          "tools": "AdonisJS, MySQL",
-          "url_github": "",
-          "url_external": ""
-        },
-      ]
+      projects_all: []
     }
   },
   methods: {
-    updateProjectsList(){
+    updateProjectsList() {
       if (this.chips.length === 0) {
         this.projects_filtered = this.projects_all;
       } else {
@@ -146,9 +72,21 @@ export default {
           return this.chips.includes(el.category);
         });
       }
+    },
+    readProjects() {
+      this.projects_all = [];
+      db.collection("projects")
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((project) => {
+            this.projects_all.push(project.data());
+          });
+        })
     }
   },
-  mounted(){
+  created() {
+    // this.projects_filtered = this.projects_all;
+    this.readProjects();
     this.projects_filtered = this.projects_all;
   }
 }
