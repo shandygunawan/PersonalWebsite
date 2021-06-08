@@ -9,18 +9,15 @@
               Hi! I'm Shandy
               </span>      
           </div>
-          <div class="p-col-12 p-lg-4 p-my-2 p-text-center">
+          <div class="p-col-12 p-lg-6 p-my-2 p-text-center">
             <router-link to="/resume">
               <Button class="p-button-link p-button-secondary p-button-outlined p-button-lg" label="Resume"></Button>
             </router-link>
           </div>
-          <div class="p-col-12 p-lg-4 p-my-2 p-text-center">
+          <div class="p-col-12 p-lg-6 p-my-2 p-text-center">
             <router-link to="/projects">
               <Button class="p-button-link p-button-secondary p-button-outlined p-button-lg" label="Projects"></Button>
             </router-link>
-          </div>
-          <div class="p-col-12 p-lg-4 p-my-2 p-text-center">
-            <Button class="p-button-link p-button-secondary p-button-outlined p-button-lg" label="Blogs"></Button>
           </div>
         </div>
       </div>
