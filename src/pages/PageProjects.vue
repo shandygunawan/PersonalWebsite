@@ -69,12 +69,7 @@ export default {
         this.projects_filtered = this.projects_all;
       } else {
         this.projects_filtered = this.projects_all.filter((el) => {
-          var chips_lowercase = [];
-          for (var i = 0; i < this.chips.length; i++) {
-            chips_lowercase.push(this.chips[i].toLowerCase());
-          }
-          // console.log(chips_lowercase);
-          return chips_lowercase.includes(el.category.toLowerCase());
+          return this.chips.map(material => material.toLowerCase()).includes(el.category.toLowerCase());
         });
       }
     },
