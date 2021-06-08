@@ -2,8 +2,8 @@
   <div class="background">
     <div class="p-d-flex p-flex-column p-p-5">
       <h1>Projects</h1>
-      <span>Type any category then press Enter to filter</span>
-      <Chips v-model="chips" @add="updateProjectsList" @remove="updateProjectsList" />
+      <span>Type one or more category then press Enter to filter. (Case-insensitive)</span>
+      <Chips class="p-mt-2" v-model="chips" @add="updateProjectsList" @remove="updateProjectsList" />
       <br/>
       <div class="p-grid">
         <transition-group name="project-list">
@@ -69,7 +69,12 @@ export default {
         this.projects_filtered = this.projects_all;
       } else {
         this.projects_filtered = this.projects_all.filter((el) => {
-          return this.chips.includes(el.category);
+          var chips_lowercase = [];
+          for (var i = 0; i < this.chips.length; i++) {
+            chips_lowercase.push(this.chips[i].toLowerCase());
+          }
+          // console.log(chips_lowercase);
+          return chips_lowercase.includes(el.category.toLowerCase());
         });
       }
     },
