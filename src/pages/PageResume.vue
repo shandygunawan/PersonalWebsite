@@ -109,6 +109,13 @@
       </div>
       <div class="p-col-12">
         <skill-panel
+          legend="CSS"
+          animation="zoom-in"
+          :skills="skills_css"
+        />
+      </div>
+      <div class="p-col-12">
+        <skill-panel
           legend="Database"
           animation="zoom-in"
           :skills="skills_database"
@@ -283,6 +290,12 @@ HerB is developed with the goal to improve people's awareness of their heart con
       ],
       skills_frontend: [
         {
+          "name": "VueJS",
+          "image": require("../assets/images/logo_vue.svg")
+        },
+      ],
+      skills_css: [
+        {
           "name": "Bootstrap",
           "image": require("../assets/images/logo_bootstrap.svg")
         },
@@ -291,8 +304,8 @@ HerB is developed with the goal to improve people's awareness of their heart con
           "image": require("../assets/images/logo_materialize.svg")
         },
         {
-          "name": "VueJS",
-          "image": require("../assets/images/logo_vue.svg")
+          "name": "Vuetify",
+          "image": require("../assets/images/logo_vuetify.svg")
         },
       ],
       skills_database: [
